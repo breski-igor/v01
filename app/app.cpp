@@ -15,10 +15,15 @@ namespace vsite::oop::v1
         return std::format("{:.2e}", b);
     }
     void mult_table(int c, std::ostream& os) {
+        
         if (c > 0 && c <= 20) {
-            os << 0;
-            for (int j = 1; j <= c; j++) {
-                os << std::setw(4) << j;
+            
+            for (int j = 0; j <= c; j++) {
+                if (j == c) {
+                    os << j;
+                    break;
+                }
+                os << j << std::setw(4);
             }
             os << '\n';
 
